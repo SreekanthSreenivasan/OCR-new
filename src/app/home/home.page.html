@@ -21,13 +21,26 @@
 
 
     <ion-item *ngFor="let line of lines">{{line}}</ion-item>
-    <ion-button size="small" *ngIf="lines.length > 0" (click)="clearWindow()" >clear</ion-button>
+    <ion-button size="small" *ngIf="lines.length > 0" (click)="clearWindow()">clear</ion-button>
 
 
   </ion-list>
+
   <ion-fab style="margin-bottom:80px" slot="fixed" horizontal="center" vertical="bottom">
-    <ion-fab-button [disabled]="busy" (click)="takePic()">
-      <ion-icon name="camera-outline"></ion-icon>
-    </ion-fab-button>
+    <ion-grid>
+      <ion-row>
+        <ion-col>
+          <ion-fab-button [disabled]="busy" (click)="takePic()">
+            <ion-icon name="camera-outline"></ion-icon>
+          </ion-fab-button>
+        </ion-col>
+        <!-- <ion-col>
+          <ion-fab-button [disabled]="busy" (click)="takePhoto()">
+            <ion-icon name="image"></ion-icon>
+          </ion-fab-button>
+        </ion-col> -->
+      </ion-row>
+    </ion-grid>
   </ion-fab>
+
 </ion-content>
