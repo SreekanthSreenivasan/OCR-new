@@ -38,27 +38,6 @@ export class HomePage {
       this.busy = false;
     }
   }
-  // async takePhoto() {
-  //   try {
-  //     this.busy = true;
-  //     const photo = await Camera.getPhoto({
-  //       quality: 90,
-  //       allowEditing: true,
-  //       resultType: CameraResultType.Uri,
-  //       source: CameraSource.Prompt
-  //     });
-  //     const imageUrl = photo.webPath;
-  //     if (!imageUrl) return;
-  //     this.imgSrc = this.sanitizer.bypassSecurityTrustUrl(imageUrl);
-  //     const path = photo.path;
-  //     if (!path) return;
-  //     this.lines = await this.processImage(path);
-  //   } catch (err) {
-  //     alert(err);
-  //   } finally {
-  //     this.busy = false;
-  //   }
-  // }
 
   async processImage(filename: string): Promise<string[]> {
     const data: TextDetections = await Ocr.detectText({ filename });
