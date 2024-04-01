@@ -17,7 +17,7 @@ export class HomePage {
 
   constructor(private sanitizer: DomSanitizer) { }
 
-  async takePic() {
+  async performAction() {
     try {
       this.busy = true;
       const photo = await Camera.getPhoto({
@@ -42,7 +42,6 @@ export class HomePage {
   async processImage(filename: string): Promise<string[]> {
     const data: TextDetections = await Ocr.detectText({ filename });
 
-    console.log(data);
     const result: string[] = [];
     for (let detection of data.textDetections) {
       result.push(detection.text);

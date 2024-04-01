@@ -6,7 +6,6 @@
 
   </ion-toolbar>
 </ion-header>
-
 <ion-content [fullscreen]="true">
   <ion-header collapse="condense">
     <ion-toolbar>
@@ -18,29 +17,23 @@
   </div>
   <ion-list [inset]="true">
     <ion-item *ngIf="message">{{message}}</ion-item>
-
-
     <ion-item *ngFor="let line of lines">{{line}}</ion-item>
     <ion-button size="small" *ngIf="lines.length > 0" (click)="clearWindow()">clear</ion-button>
-
-
   </ion-list>
-
   <ion-fab style="margin-bottom:80px" slot="fixed" horizontal="center" vertical="bottom">
     <ion-grid>
       <ion-row>
         <ion-col>
-          <ion-fab-button [disabled]="busy" (click)="takePic()">
+          <ion-fab-button [disabled]="busy" (click)="performAction()">
             <ion-icon name="camera-outline"></ion-icon>
           </ion-fab-button>
         </ion-col>
         <!-- <ion-col>
-          <ion-fab-button [disabled]="busy" (click)="takePhoto()">
+          <ion-fab-button  (click)="takePhoto()">
             <ion-icon name="image"></ion-icon>
           </ion-fab-button>
         </ion-col> -->
       </ion-row>
     </ion-grid>
   </ion-fab>
-
 </ion-content>
