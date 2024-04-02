@@ -22,7 +22,7 @@ export class HomePage {
       this.busy = true;
       const photo = await Camera.getPhoto({
         quality: 90,
-        allowEditing: true,
+        allowEditing: false,
         resultType: CameraResultType.Uri,
         source: CameraSource.Prompt
       });
