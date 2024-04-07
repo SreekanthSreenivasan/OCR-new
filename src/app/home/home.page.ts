@@ -57,4 +57,6 @@ export class HomePage {
     this.imgSrc = ''
   }
 
+  
+
 }
