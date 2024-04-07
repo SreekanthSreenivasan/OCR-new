@@ -1,7 +1,7 @@
 <div *ngIf="code">
   <p>Selected image color <span [style.color]="code">{{ colorCode }}</span></p>
 </div>
-<canvas id="preview"></canvas>
+<canvas style="display: none;" id="preview"></canvas>
 <canvas id="canvas"></canvas>
 <!-- <input id="input" type="file" /> -->
 <label for="input" class="file-input">
