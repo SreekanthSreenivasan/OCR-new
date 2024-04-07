@@ -1,9 +1,6 @@
 <ion-header [translucent]="true">
   <ion-toolbar>
-    <ion-title>
-      Optical Character Recognition
-    </ion-title>
-
+    <ion-title> Optical Character Recognition </ion-title>
   </ion-toolbar>
 </ion-header>
 <ion-content [fullscreen]="true">
@@ -15,18 +12,22 @@
   <div id="container">
     <img [src]="imgSrc" />
   </div>
+
   <ion-list [inset]="true">
     <ion-item *ngIf="message">{{message}}</ion-item>
     <ion-item *ngFor="let line of lines">{{line}}</ion-item>
     <ion-button size="small" *ngIf="lines.length > 0" (click)="clearWindow()">clear</ion-button>
   </ion-list>
-  <ion-fab style="margin-bottom:80px" slot="fixed" horizontal="center" vertical="bottom">
+  <ion-fab style="margin-bottom: 80px" slot="fixed" horizontal="center" vertical="bottom">
     <ion-grid>
       <ion-row>
         <ion-col>
           <ion-fab-button [disabled]="busy" (click)="performAction()">
             <ion-icon name="camera-outline"></ion-icon>
           </ion-fab-button>
+        </ion-col>
+        <ion-col>
+          <app-image-color></app-image-color>
         </ion-col>
         <!-- <ion-col>
           <ion-fab-button  (click)="takePhoto()">
